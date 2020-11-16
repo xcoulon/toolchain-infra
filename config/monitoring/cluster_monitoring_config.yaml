@@ -4,12 +4,12 @@ metadata:
   namespace: openshift-monitoring
   name: cluster-monitoring-config
 # For OpenShift 4.5 (where User Workload Monitoring is Tech Preview)
-data:
-  config.yaml: |
-    techPreviewUserWorkload:
-      enabled: true
-
-# For OpenShift 4.6 (where User Workload Monitoring is GA)
 # data:
 #   config.yaml: |
-#     enableUserWorkload: true
+#     techPreviewUserWorkload:
+#       enabled: true
+
+# For OpenShift 4.6 (where User Workload Monitoring is GA)
+data:
+  config.yaml: |
+    enableUserWorkload: true

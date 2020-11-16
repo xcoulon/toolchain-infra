@@ -17,7 +17,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1605283104931,
+  "iteration": 1605519556827,
   "links": [],
   "panels": [
     {
@@ -38,7 +38,7 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 10,
+        "h": 11,
         "w": 12,
         "x": 0,
         "y": 0
@@ -86,6 +86,13 @@
           "interval": "",
           "legendFormat": "member-operator",
           "refId": "B"
+        },
+        {
+          "datasource": "Host Cluster",
+          "expr": "pod:container_cpu_usage:sum{pod=~'registration-service-.*',namespace=~'.*-host-operator'}*1000",
+          "interval": "",
+          "legendFormat": "registration-service",
+          "refId": "C"
         }
       ],
       "thresholds": [],
@@ -159,7 +166,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 10,
+        "h": 11,
         "w": 12,
         "x": 12,
         "y": 0
@@ -197,7 +204,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "-- Mixed --",
-      "decimals": 2,
+      "decimals": 1,
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -208,10 +215,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 10,
+        "h": 11,
         "w": 12,
         "x": 0,
-        "y": 10
+        "y": 11
       },
       "hiddenSeries": false,
       "id": 8,
@@ -254,6 +261,13 @@
           "interval": "",
           "legendFormat": "member-operator",
           "refId": "B"
+        },
+        {
+          "datasource": "Host Cluster",
+          "expr": "sum(container_memory_working_set_bytes{pod=~'registration-service-.*',namespace=~'.*-host-operator',container='',}) BY (pod, namespace)",
+          "interval": "",
+          "legendFormat": "registration-service",
+          "refId": "C"
         }
       ],
       "thresholds": [],
@@ -277,9 +291,9 @@
       "yaxes": [
         {
           "$$hashKey": "object:514",
-          "decimals": 2,
+          "decimals": 1,
           "format": "bytes",
-          "label": null,
+          "label": "",
           "logBase": 1,
           "max": null,
           "min": null,
@@ -318,10 +332,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 10,
+        "h": 11,
         "w": 12,
         "x": 12,
-        "y": 10
+        "y": 11
       },
       "hiddenSeries": false,
       "id": 12,
@@ -420,7 +434,7 @@
     "list": [
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": [
             "Host Cluster",
             "Member Cluster"
