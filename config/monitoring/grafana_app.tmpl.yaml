@@ -17,13 +17,13 @@ parameters:
 - name: SA_NAME
   description: The name of the Service Account 
   required: true
-- name: THANOS_URL_HOST
+- name: PROMETHEUS_URL_HOST
   description: the URL to the Prometheus instance on the Host Cluster
   required: true
 - name: BEARER_TOKEN_HOST
   description: The bearer token to authenticate to Thanos Querier on the Host Cluster
   required: true
-- name: THANOS_URL_MEMBER
+- name: PROMETHEUS_URL_MEMBER
   description: the URL to the Prometheus instance on the Member Cluster
   required: true
 - name: BEARER_TOKEN_MEMBER
@@ -177,7 +177,7 @@ objects:
         version: 1
         type: prometheus
         access: proxy
-        url: ${THANOS_URL_HOST}
+        url: ${PROMETHEUS_URL_HOST}
         basicAuth: false
         withCredentials: true
         isDefault: false
@@ -192,7 +192,7 @@ objects:
         version: 1
         type: prometheus
         access: proxy
-        url: ${THANOS_URL_MEMBER}
+        url: ${PROMETHEUS_URL_MEMBER}
         basicAuth: false
         withCredentials: true
         isDefault: false

@@ -8,12 +8,12 @@ labels:
   # will be applied on all objects defined below
   app: grafana 
 parameters:
-- name: NAMESPACE
-  description: The namespace in which to create these Grafana resources
+- name: NAME
+  description: The name of the namespace to create
   required: true
 
 objects:
 - apiVersion: v1
   kind: Namespace
   metadata:
-    name: ${NAMESPACE}
+    name: ${NAME}
